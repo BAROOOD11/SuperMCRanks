@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUPERMc Minecraft Ranks and Plot Info</title>
+    <title>SUPERMc Minecraft Ranks</title>
     <style>
         /* Base Styles */
         body, html {
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #2c2b2b; /* Dark Background */
+            background-color: #2c2b2b; /* Dark Blue */
             color: #D3D3D3; /* Light Gray */
             height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
         }
 
         .container {
@@ -116,15 +115,11 @@
             }
         }
 
-        /* Button styles */
-        .button-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-        }
-
-        .side-button {
+        /* Button for Discord Invite */
+        .invite-button {
+            display: inline-block;
             padding: 15px 30px;
+            margin-top: 30px;
             font-size: 1.2em;
             color: #D3D3D3; /* Light Gray */
             background-color: #1A1A1A;
@@ -134,18 +129,16 @@
             transition: all 0.3s ease-in-out;
             position: relative;
             overflow: hidden;
-            width: 200px;
-            text-align: center;
         }
 
-        .side-button:hover {
+        .invite-button:hover {
             color: #001F3F; /* Dark Blue */
             background-color: #D3D3D3; /* Light Gray */
             transform: translateY(-5px);
             box-shadow: 0 0 15px rgba(211, 211, 211, 0.8); /* Gray glow */
         }
 
-        .side-button::before {
+        .invite-button::before {
             content: '';
             position: absolute;
             top: 50%;
@@ -158,12 +151,12 @@
             z-index: 0;
         }
 
-        .side-button:hover::before {
+        .invite-button:hover::before {
             width: 0;
             height: 0;
         }
 
-        .side-button span {
+        .invite-button span {
             position: relative;
             z-index: 1;
         }
@@ -182,40 +175,29 @@
                 padding: 20px;
             }
 
-            .button-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .side-button {
-                margin-bottom: 20px;
+            .invite-button {
                 padding: 10px 20px;
                 font-size: 1em;
             }
         }
 
-        /* Plot Information */
-        .plot-info {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        /* Footer with Discord invite */
+        .footer {
             margin-top: 20px;
+            font-size: 1em;
+            color: #D3D3D3;
         }
 
-        .plot-info h2 {
-            font-size: 2em;
-            color: #FF4500; /* Orange Red */
-            margin-bottom: 10px;
-        }
-
-        .plot-info p {
-            font-size: 1.2em;
-        }
-
-        .plot-info span {
-            font-weight: bold;
+        .footer a {
             color: #006400; /* Dark Green */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #228B22; /* Forest Green */
+            text-shadow: 0 0 10px rgba(0, 100, 0, 0.5);
         }
     </style>
 </head>
@@ -230,9 +212,10 @@
             <li class="rank-card"><span class="rank">5. SUPERMc Rank</span> / Price: 35m</li>
             <li class="rank-card"><span class="rank">6. SUPERMc+ Rank</span> / Price: 40m <span class="most-buy">Most Buy</span></li>
         </ul>
-
         <p>Every rank has mine blocks, daily keys, and more!</p>
-
-        <div class="button-container">
-            <!-- Left Button: Ranks -->
-            <a class="side-button" href="#"><span>Ranks</span></a>
+        <a class="invite-button" href="https://discord.gg/supersMC" target="_blank"><span>Join our Discord!</span></a>
+        <div class="footer">
+        </div>
+    </div>
+</body>
+</html>
