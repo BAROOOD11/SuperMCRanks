@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUPERMc - Sign In</title>
+    <title>SUPERMc Minecraft Ranks</title>
     <style>
         body, html {
             margin: 0;
@@ -23,93 +23,81 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
             width: 90%;
-            max-width: 800px;
-            display: flex;
-        }
-
-        .left-sidebar {
-            width: 200px;
-            padding: 20px;
-            background-color: #1a1a1a;
-            border-radius: 15px;
-            margin-right: 30px;
-        }
-
-        .left-sidebar button {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-            color: #D3D3D3;
-            background-color: #111;
-            border: 2px solid #1E90FF;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .left-sidebar button:hover {
-            background-color: #1E90FF;
-            color: #111;
-            transform: scale(1.05);
-        }
-
-        .sign-in-container {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            max-width: 700px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 3em;
+            color: #006400;
             margin-bottom: 20px;
-            color: #1E90FF;
-            text-shadow: 0 0 10px rgba(30, 144, 255, 0.7);
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(0, 100, 0, 0.7);
         }
 
-        input[type="text"] {
-            padding: 15px;
-            font-size: 1.2em;
-            width: 80%;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            border: none;
-            outline: none;
+        ul {
+            list-style-type: none;
+            padding: 0;
         }
 
-        .sign-in-button {
-            padding: 15px 30px;
-            background-color: #1E90FF;
-            color: white;
-            font-size: 1.2em;
-            border-radius: 50px;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
+        li {
+            font-size: 1.5em;
+            margin: 15px 0;
+            transition: transform 0.3s ease-in-out;
         }
 
-        .sign-in-button:hover {
-            background-color: #87CEEB;
+        li:hover {
             transform: scale(1.05);
+            color: #228B22;
+        }
+
+        .rank {
+            font-weight: bold;
+            color: #006400;
+        }
+
+        .rank-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .rank-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 100, 0, 0.3) 0%, transparent 80%);
+            transform: rotate(45deg);
+            transition: all 0.5s ease-in-out;
+            z-index: 0;
+        }
+
+        .rank-card:hover::before {
+            top: 0;
+            left: 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="left-sidebar">
-            <button onclick="window.location.href='ranks.html'">Ranks</button>
-            <button onclick="window.location.href='plot.html'">Plot</button>
-        </div>
-
-        <div class="sign-in-container">
-            <h1>Sign In</h1>
-            <form action="/dashboard" method="POST">
-                <input type="text" name="username" placeholder="Enter your username" required>
-                <button class="sign-in-button" type="submit">Sign In</button>
-            </form>
-        </div>
+        <h1>SUPERMc Ranks</h1>
+        <ul>
+            <li class="rank-card"><span class="rank">1. VIP Rank</span> / Price: 15m</li>
+            <li class="rank-card"><span class="rank">2. VIP+ Rank</span> / Price: 18m</li>
+            <li class="rank-card"><span class="rank">3. MVP Rank</span> / Price: 25m</li>
+            <li class="rank-card"><span class="rank">4. MVP+ Rank</span> / Price: 28m</li>
+            <li class="rank-card"><span class="rank">5. SUPERMc Rank</span> / Price: 35m</li>
+            <li class="rank-card"><span class="rank">6. SUPERMc+ Rank</span> / Price: 40m</li>
+        </ul>
+        <p>Every rank has mine blocks, daily keys, and more!</p>
     </div>
 </body>
 </html>
